@@ -1,0 +1,5 @@
+module Walky
+  module AStar
+    VERSION = '0.0.1'
+  end
+end

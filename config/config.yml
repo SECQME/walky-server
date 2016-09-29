@@ -1,0 +1,30 @@
+common: &common
+  url_grid_crime_report: /safewalkreport
+  json_key_city: city
+  json_key_latitude: latitude
+  json_key_longitude: longitude
+  json_key_safety_rating: safety_rating
+  json_key_rating : rating
+  json_key_steps: steps
+  route_search_default_radius: 150
+
+development:
+  <<: *common
+  ss_base_url: https://example.com/saferstreets/rs/data/v2
+  # development only keys go here
+
+test:
+  <<: *common
+  ss_base_url: https://example.com/saferstreets/rs/data/v2
+  # spec testing only keys go here
+
+production:
+  <<: *common
+  ss_base_url: https://example.com/saferstreets/rs/data/v2
+  # production only keys go here
+
+staging:
+  <<: *common
+  ss_base_url: https://example.com/saferstreets/rs/data/v2
+
+# usage: anywhere in the app you need to use it, call APP_CONFIG['key_name']
